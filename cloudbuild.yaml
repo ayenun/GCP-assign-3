@@ -1,14 +1,14 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/triple-access-419323/assignment4/gcpimage:${COMMIT_SHA}', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/gentle-cable-418618/flask-app/gcpimage:${COMMIT_SHA}', '.']
   # Push the Docker image to the artifact registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/triple-access-419323/assignment4/gcpimage:${COMMIT_SHA}']
+    args: ['push', 'us-central1-docker.pkg.dev/gentle-cable-418618/flask-app/gcpimage:${COMMIT_SHA}']
 options:
   # Set defaultLogsBucketBehavior to REGIONAL_USER_OWNED_BUCKET
   # defaultLogsBucket: 'gs://your-build-logs-bucket' # Replace with your build logs bucket
   defaultLogsBucketBehavior: 'REGIONAL_USER_OWNED_BUCKET'
 images:
 # Store images in Google Artifact Registry
-  - us-central1-docker.pkg.dev/triple-access-419323/assignment4/gcpimage:${COMMIT_SHA}
+  - us-central1-docker.pkg.dev/gentle-cable-418618/flask-app/gcpimage:${COMMIT_SHA}
